@@ -89,7 +89,9 @@ export class CreateStudent extends Component {
       }, 4000);
     }
   }
-
+  resetData() {
+    document.location.reload();
+  }
   addOrUpdateStudent = async (body) => {
     try {
       this.setState({ loading: true });
@@ -394,7 +396,7 @@ export class CreateStudent extends Component {
                 <Button
                   variant="secondary"
                   active
-                  onClick={() => document.location.reload()}
+                  onClick={() => this.resetData()}
                 >
                   Cancel
                 </Button>

@@ -25,7 +25,9 @@ export class CreateTeacher extends Component {
       emailAddres: "",
     };
   }
-
+  resetData() {
+    document.location.reload();
+  }
   handleSubmit(event) {
     const form = event.currentTarget;
     event.preventDefault();
@@ -227,7 +229,7 @@ export class CreateTeacher extends Component {
                 <Button
                   variant="secondary"
                   active
-                  onClick={() => document.location.reload()}
+                  onClick={() => this.resetData()}
                 >
                   Cancel
                 </Button>

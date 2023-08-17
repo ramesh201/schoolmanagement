@@ -23,7 +23,9 @@ export class CreateSubject extends Component {
       subjectName: "",
     };
   }
-
+  resetData() {
+    document.location.reload();
+  }
   handleSubmit(event) {
     const form = event.currentTarget;
     event.preventDefault();
@@ -151,7 +153,7 @@ export class CreateSubject extends Component {
                 <Button
                   variant="secondary"
                   active
-                  onClick={() => document.location.reload()}
+                  onClick={() => this.resetData()}
                 >
                   Cancel
                 </Button>
