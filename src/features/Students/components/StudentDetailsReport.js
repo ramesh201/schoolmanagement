@@ -133,6 +133,7 @@ export class StudentDetailsReport extends Component {
                         type="text"
                         placeholder="Class -----"
                         value={this.state.studentDetails.classroomName}
+                        disabled={true}
                       />
                     </Col>
                   </Row>
@@ -144,6 +145,7 @@ export class StudentDetailsReport extends Component {
                         type="text"
                         placeholder="John Doe"
                         value={this.state.studentDetails.contactPersonName}
+                        disabled={true}
                       />
                     </Col>
                     <Col md>
@@ -153,6 +155,7 @@ export class StudentDetailsReport extends Component {
                         type="email"
                         placeholder="name@example.com"
                         value={this.state.studentDetails.contactPersonEmail}
+                        disabled={true}
                       />
                     </Col>
                   </Row>
@@ -164,6 +167,7 @@ export class StudentDetailsReport extends Component {
                         type="text"
                         placeholder="07xxxxxxxxx"
                         value={this.state.studentDetails.contactPersonMobile}
+                        disabled={true}
                       />
                     </Col>
                     <Col md>
@@ -180,6 +184,7 @@ export class StudentDetailsReport extends Component {
                                 "yyyy-mm-dd"
                               )
                         }
+                        disabled={true}
                       />
                     </Col>
                   </Row>

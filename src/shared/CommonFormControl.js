@@ -10,6 +10,7 @@ export class CommonFormControl extends Component {
           type={this.props.type}
           placeholder={this.props.placeholder}
           value={this.props.value}
+          disabled={this.props.value}
         />
       </FloatingLabel>
     );

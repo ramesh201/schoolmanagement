@@ -82,6 +82,7 @@ export class Students extends Component {
 
       alert("error");
     }
+    this.setState({ selectedStudent: {} });
   };
 
   loadPaginationData(pageNumber) {

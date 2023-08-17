@@ -58,6 +58,7 @@ export class Subjects extends Component {
 
       var pgs = Math.round(res.data.length / 5);
       this.setState({
+        selectedSubject: {},
         loading: false,
         listOfSubjects: res.data,
         totalPages: pgs + 1,
@@ -68,6 +69,7 @@ export class Subjects extends Component {
 
       alert("error");
     }
+    this.setState({ selectedSubject: {} });
   };
 
   loadPaginationData(pageNumber) {

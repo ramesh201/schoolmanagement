@@ -67,6 +67,7 @@ export class Classrooms extends Component {
 
       alert("error");
     }
+    this.setState({ selectedClassroom: {} });
   };
 
   loadPaginationData(pageNumber) {

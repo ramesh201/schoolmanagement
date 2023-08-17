@@ -70,9 +70,9 @@ export class Teachers extends Component {
     } catch (error) {
       console.log(error);
       this.setState({ loading: false });
-
       alert("error");
     }
+    this.setState({ selectedTeacher: {} });
   };
 
   loadPaginationData(pageNumber) {
