@@ -1,0 +1,341 @@
+MySQL Scripts
+
+
+
+CREATE SCHEMA `db_school` ;
+
+
+Class room table
+
+CREATE TABLE `db_school`.`Classroom` (
+  `ClassroomId` INT NOT NULL AUTO_INCREMENT,
+  `ClassroomName` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`ClassroomId`),
+  UNIQUE INDEX `ClassroomName_UNIQUE` (`ClassroomName` ASC) VISIBLE
+
+ALTER TABLE `db_school`.`Classroom` 
+ADD COLUMN `IsActive` TINYINT(1) NOT NULL AFTER `ClassroomName`,
+ADD COLUMN `CreatedDate` DATETIME NOT NULL DEFAULT now() AFTER `IsActive`,
+ADD COLUMN `CreatedBy` INT NOT NULL DEFAULT '-1' AFTER `CreatedDate`,
+ADD COLUMN `ModifiedDate` DATETIME NULL AFTER `CreatedBy`,
+ADD COLUMN `ModifiedBy` INT NULL AFTER `ModifiedDate`;
+
+ALTER TABLE `db_school`.`Classroom` 
+CHANGE COLUMN `IsActive` `IsActive` TINYINT(1) NOT NULL DEFAULT 1 ;
+
+
+Class room records 
+
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('1', 'Grade 1 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('2', 'Grade 1 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('3', 'Grade 1 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('4', 'Grade 2 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('5', 'Grade 2 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('6', 'Grade 2 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('7', 'Grade 3 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('8', 'Grade 3 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('9', 'Grade 3 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('10', 'Grade 4 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('11', 'Grade 4 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('12', 'Grade 4 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('13', 'Grade 5 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('14', 'Grade 5 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('15', 'Grade 5 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('16', 'Grade 6 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('17', 'Grade 6 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('18', 'Grade 6 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('19', 'Grade 7 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('20', 'Grade 7 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('21', 'Grade 7 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('22', 'Grade 8 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('23', 'Grade 8 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('24', 'Grade 8 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('25', 'Grade 9 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('26', 'Grade 9 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('27', 'Grade 9 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('28', 'Grade 10 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('29', 'Grade 10 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('30', 'Grade 10 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('31', 'Grade 11 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('32', 'Grade 11 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('33', 'Grade 11 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('34', 'Grade 12 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('35', 'Grade 12 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('36', 'Grade 12 - C');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('37', 'Grade 13 - A');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('38', 'Grade 13 - B');
+INSERT INTO `db_school`.`Classroom` (`ClassroomId`, `ClassroomName`) VALUES ('39', 'Grade 13 - C');
+
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '1');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '2');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '3');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '4');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '5');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '6');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '7');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '8');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '9');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '10');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '11');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '12');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '13');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '14');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '15');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '16');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '17');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '18');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '19');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '20');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '21');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '22');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '23');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '24');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '25');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '26');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '27');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '28');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '29');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '30');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '31');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '32');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '33');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '34');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '35');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '36');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '37');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '38');
+UPDATE `db_school`.`Classroom` SET `IsActive` = '1' WHERE (`ClassroomId` = '39');
+
+
+
+CREATE TABLE `db_school`.`StudentTbl` (
+  `StudentId` INT NOT NULL AUTO_INCREMENT,
+  `StudentFirstName` VARCHAR(45) NOT NULL,
+  `StudentLastName` VARCHAR(45) NULL,
+  `ClassroomId` INT NOT NULL,
+  `DoB` DATETIME NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL,
+  `CreatedBy` INT NOT NULL,
+  `ModifiedDate` DATETIME NULL,
+  `ModifiedBy` INT NULL,
+  PRIMARY KEY (`StudentId`),
+  INDEX `ClassroomId_idx` (`ClassroomId` ASC) VISIBLE,
+  CONSTRAINT `ClassroomId`
+    FOREIGN KEY (`ClassroomId`)
+    REFERENCES `db_school`.`Classroom` (`ClassroomId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  INDEX `ContactPersonId_idx` (`ClassroomId` ASC) VISIBLE,
+  CONSTRAINT `ClassroomId`
+    FOREIGN KEY (`ClassroomId`)
+    REFERENCES `db_school`.`Classroom` (`ClassroomId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+INSERT INTO `db_school`.`StudentTbl` (`StudentId`, `StudentFirstName`, `StudentLastName`, `ClassroomId`, `DoB`, `CreatedDate`, `CreatedBy`) VALUES ('1', 'Ramesh', 'Sri', '32', '2007-01-10', '2023-01-03', '-1');
+INSERT INTO `db_school`.`StudentTbl` (`StudentFirstName`, `StudentLastName`, `ClassroomId`, `DoB`, `CreatedDate`, `CreatedBy`) VALUES ('John', 'Doe', '7', '2015-02-22', '2023-01-08', '-1');
+INSERT INTO `db_school`.`StudentTbl` (`StudentFirstName`, `StudentLastName`, `ClassroomId`, `DoB`, `CreatedDate`, `CreatedBy`) VALUES ('Jane’, 'Doe', '15', '2013-02-22', '2023-04-09', '-1');
+INSERT INTO `db_school`.`StudentTbl` (`StudentFirstName`, `StudentLastName`, `ClassroomId`, `DoB`, `CreatedDate`, `CreatedBy`) VALUES ('Lahiru', 'Madurapperuma', '7', '2015-03-08', '2023-03-19', '-1');
+INSERT INTO `db_school`.`StudentTbl` (`StudentFirstName`, `StudentLastName`, `ClassroomId`, `DoB`, `CreatedDate`, `CreatedBy`) VALUES ('Prashanth', 'Neel', '15', '2013-10-12', '2022-10-11', '-1');
+INSERT INTO `db_school`.`StudentTbl` (`StudentFirstName`, `StudentLastName`, `ClassroomId`, `DoB`, `CreatedDate`, `CreatedBy`) VALUES ('Yasith', 'Rupasinghe', '27', '2009-12-01', '2021-07-10', '-1');
+
+
+
+CREATE TABLE `db_school`.`StudentContactPerson` (
+  `StudentContactPersonId` INT NOT NULL AUTO_INCREMENT,,
+  `StudentContactPersonName` VARCHAR(45) NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL,
+  `CreatedBy` INT NOT NULL,
+  `ModifiedDate` DATETIME NULL,
+  `ModifiedBy` INT NULL,
+  PRIMARY KEY (`StudentContactPersonId`));
+
+INSERT INTO `db_school`.`StudentContactPerson` (`StudentContactPersonId`, `StudentContactPersonName`, `CreatedDate`, `CreatedBy`) VALUES (‘1’, ‘John Perera, '2023-08-10’, '-1');
+
+INSERT INTO `db_school`.`StudentContactPerson` (`StudentContactPersonId`, `StudentContactPersonName`, `CreatedDate`, `CreatedBy`) VALUES ('2', 'Sheran Kumarasinghe', '2023-08-03', '-1');
+
+INSERT INTO `db_school`.`StudentContactPerson` (`StudentContactPersonName`, `CreatedDate`, `CreatedBy`) VALUES ('Ravindra Thilakarathna', '2023-02-26', '-1');
+INSERT INTO `db_school`.`StudentContactPerson` (`StudentContactPersonName`, `CreatedDate`, `CreatedBy`) VALUES ('Nalin Rathnayake', '2022-11-12', '-1');
+INSERT INTO `db_school`.`StudentContactPerson` (`StudentContactPersonName`, `CreatedDate`, `CreatedBy`) VALUES ('Sunil Jayawardane', '2021-07-24', '-1');
+INSERT INTO `db_school`.`StudentContactPerson` (`StudentContactPersonName`, `CreatedDate`, `CreatedBy`) VALUES (‘Dimuth Priyankara, '2021-05-24', '-1');
+
+
+CREATE TABLE `db_school`.`StudentHasContactPerson` (
+  `StudentHasContactPersonId` INT NOT NULL AUTO_INCREMENT,
+  `StudentId` INT NOT NULL,
+  `ContactPersonId` INT NOT NULL,
+  PRIMARY KEY (`StudentHasContactPersonId`));
+
+INSERT INTO `db_school`.`StudentHasContactPerson` (`StudentHasContactPersonId`, `StudentId`, `ContactPersonId`) VALUES ('1', '1', '1');
+INSERT INTO `db_school`.`StudentHasContactPerson` (`StudentId`, `ContactPersonId`) VALUES ('2', '2');
+INSERT INTO `db_school`.`StudentHasContactPerson` (`StudentId`, `ContactPersonId`) VALUES ('3', '3');
+INSERT INTO `db_school`.`StudentHasContactPerson` (`StudentId`, `ContactPersonId`) VALUES ('4', '6');
+INSERT INTO `db_school`.`StudentHasContactPerson` (`StudentId`, `ContactPersonId`) VALUES ('5', '7');
+INSERT INTO `db_school`.`StudentHasContactPerson` (`StudentId`, `ContactPersonId`) VALUES ('6', '8');
+
+
+
+CREATE TABLE `db_school`.`ContatctPersonEmail` (
+  `EmailId` INT NOT NULL AUTO_INCREMENT,
+  `EmailAddress` VARCHAR(100) NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL,
+  `CreatedBy` INT NOT NULL,
+  `ModifiedDate` DATETIME NULL,
+  `ModifiedBy` INT NULL,
+  `ContatctPersonId` INT NOT NULL,
+  PRIMARY KEY (`EmailId`),
+  INDEX `ContatctPersonId_idx` (`ContatctPersonId` ASC) VISIBLE,
+  CONSTRAINT `ContatctPersonId`
+    FOREIGN KEY (`ContatctPersonId`)
+    REFERENCES `db_school`.`StudentContactPerson` (`StudentContactPersonId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+INSERT INTO `db_school`.`ContatctPersonEmail` (`EmailId`, `EmailAddress`, `IsActive`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('1', 'rameshsheran2@gmail.com', '1', '2023-08-10', '-1', '1');
+INSERT INTO `db_school`.`ContatctPersonEmail` (`EmailId`, `EmailAddress`, `IsActive`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('2', 'johnp@re.act', '1', '2020-07-05', '-1', '2');
+
+INSERT INTO `db_school`.`ContatctPersonEmail` (`EmailAddress`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('janedd@jg.jj', '2019-02-18', '-1', '3');
+INSERT INTO `db_school`.`ContatctPersonEmail` (`EmailAddress`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('test@ffaa.jj', '2020-07-10', '-1', '6');
+INSERT INTO `db_school`.`ContatctPersonEmail` (`EmailAddress`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('dtestc@df.jo', '2022-08-01', '-1', '7');
+INSERT INTO `db_school`.`ContatctPersonEmail` (`EmailAddress`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('srilanka@po.int', '2019-04-29', '-1', '8');
+
+
+
+CREATE TABLE `db_school`.`ContactPersonMobile` (
+  `MobileNumberId` INT NOT NULL AUTO_INCREMENT,
+  `MobileNumber` VARCHAR(10) NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL,
+  `CreatedBy` INT NOT NULL,
+  `ModifiedDate` DATETIME NULL,
+  `ModifiedBy` INT NULL,
+  `ContatctPersonId` INT NOT NULL,
+  PRIMARY KEY (`MobileNumberId`),
+  INDEX `ContatctPersonId_idx` (`ContatctPersonId` ASC) VISIBLE,
+  CONSTRAINT `ContatctPersonId1`
+    FOREIGN KEY (`ContatctPersonId`)
+    REFERENCES `db_school`.`StudentContactPerson` (`StudentContactPersonId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+
+INSERT INTO `db_school`.`ContactPersonMobile` (`MobileNumberId`, `MobileNumber`, `IsActive`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('1', '0776952098', '1', '2023-08-10', '-1', '1');
+
+INSERT INTO `db_school`.`ContactPersonMobile` (`MobileNumberId`, `MobileNumber`, `CreatedDate`, `CreatedBy`,`ContatctPersonId`) VALUES ('2', '0776950001', '2023-08-08', '-1','2');
+
+INSERT INTO `db_school`.`ContactPersonMobile` (`MobileNumber`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('0764433222', '2020-06-09', '-1', '3');
+INSERT INTO `db_school`.`ContactPersonMobile` (`MobileNumber`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('0714325677', '2019-07-18', '-1', '6');
+INSERT INTO `db_school`.`ContactPersonMobile` (`MobileNumber`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('0780965477', '2022-09-25', '-1', '7');
+INSERT INTO `db_school`.`ContactPersonMobile` (`MobileNumber`, `CreatedDate`, `CreatedBy`, `ContatctPersonId`) VALUES ('0745667533', '2023-01-01', '-1', '8');
+
+
+
+CREATE TABLE `db_school`.`SchoolSubject` (
+  `SubjectId` INT NOT NULL AUTO_INCREMENT,
+  `SubjectName` VARCHAR(45) NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL DEFAULT now(),
+  `CreatedBy` INT NOT NULL,
+  `ModifiedDate` DATETIME NULL,
+  `ModifiedBy` INT NULL,
+  PRIMARY KEY (`SubjectId`));
+
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectId`, `SubjectName`, `CreatedBy`) VALUES ('1', 'Sinhala', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectId`, `SubjectName`, `CreatedBy`) VALUES ('2', 'English', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectId`, `SubjectName`, `CreatedBy`) VALUES ('3', 'Tamil', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectId`, `SubjectName`, `CreatedBy`) VALUES ('4', 'History', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectId`, `SubjectName`, `CreatedBy`) VALUES ('5', 'Science', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectId`, `SubjectName`, `CreatedBy`) VALUES ('6', 'Maths', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectId`, `SubjectName`, `CreatedBy`) VALUES ('7', 'Information Technology', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Home Science', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Health Studies', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Art', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Dancing', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Music', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Commerce', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Logic', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Accounting', '-1');
+INSERT INTO `db_school`.`SchoolSubject` (`SubjectName`, `CreatedBy`) VALUES ('Economics', '-1');
+
+
+
+CREATE TABLE `db_school`.`Teacher` (
+  `TeacherId` INT NOT NULL AUTO_INCREMENT,
+  `TeacherFirstName` VARCHAR(45) NOT NULL,
+  `TeacherLastName` VARCHAR(45) NOT NULL,
+  `TeacherContactNo` VARCHAR(45) NOT NULL,
+  `TeacherEmail` NVARCHAR(100) NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL DEFAULT now(),
+  `CreatedBy` INT NOT NULL,
+  `ModifiedDate` DATETIME NULL,
+  `ModifiedBy` INT NULL,
+  PRIMARY KEY (`TeacherId`));
+
+
+INSERT INTO `db_school`.`Teacher` (`TeacherId`, `TeacherFirstName`, `TeacherLastName`, `TeacherContactNo`, `TeacherEmail`, `CreatedBy`) VALUES ('1', 'Sugath', 'Dissanayake', '0769074355', 'sugathd@gh.com', '-1');
+
+INSERT INTO `db_school`.`Teacher` (`TeacherFirstName`, `TeacherLastName`, `TeacherContactNo`, `TeacherEmail`, `CreatedBy`) VALUES ('Kusum', 'Pathirana', '0748976544', 'kpathirana@sc.ool', '-1');
+
+
+CREATE TABLE `db_school`.`AllocateClassroom` (
+  `AllocateClassroomId` INT NOT NULL AUTO_INCREMENT,
+  `ClassroomId` INT NOT NULL,
+  `TeacherId` INT NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL DEFAULT now(),
+  `CreatedBy` INT NOT NULL DEFAULT -1,
+  `ModifiedDate` VARCHAR(45) NULL,
+  `ModifiedBy` VARCHAR(45) NULL,
+  PRIMARY KEY (`AllocateClassroomId`),
+  INDEX `ClassroomId_idx` (`ClassroomId` ASC) VISIBLE,
+  INDEX `TeacherId_idx` (`TeacherId` ASC) VISIBLE,
+  CONSTRAINT `ClassroomId1`
+    FOREIGN KEY (`ClassroomId`)
+    REFERENCES `db_school`.`Classroom` (`ClassroomId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `TeacherId`
+    FOREIGN KEY (`TeacherId`)
+    REFERENCES `db_school`.`Teacher` (`TeacherId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+INSERT INTO `db_school`.`AllocateClassroom` (`AllocateClassroomId`, `ClassroomId`, `TeacherId`) VALUES ('1', '32', '1');
+INSERT INTO `db_school`.`AllocateClassroom` (`ClassroomId`, `TeacherId`) VALUES ('7', '2');
+
+
+
+CREATE TABLE `db_school`.`AllocateSubject` (
+  `AllocateSubjectId` INT NOT NULL AUTO_INCREMENT,
+  `SubjectId` INT NOT NULL,
+  `TeacherId` INT NOT NULL,
+  `IsActive` TINYINT(1) NOT NULL DEFAULT 1,
+  `CreatedDate` DATETIME NOT NULL DEFAULT now(),
+  `CreatedBy` INT NOT NULL DEFAULT -1,
+  `ModifiedDate` VARCHAR(45) NULL,
+  `ModifiedBy` VARCHAR(45) NULL,
+  PRIMARY KEY (`AllocateSubjectId`),
+  INDEX `AllocateSubjectId_idx` (`SubjectId` ASC) VISIBLE,
+  INDEX `TeacherId_idx` (`TeacherId` ASC) VISIBLE,
+  CONSTRAINT `SubjectId`
+    FOREIGN KEY (`SubjectId`)
+    REFERENCES `db_school`.`SchoolSubject` (`SubjectId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `TeacherId1`
+    FOREIGN KEY (`TeacherId`)
+    REFERENCES `db_school`.`Teacher` (`TeacherId`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+
+INSERT INTO `db_school`.`AllocateSubject` (`AllocateSubjectId`, `SubjectId`, `TeacherId`) VALUES ('1', '1', '1');
+INSERT INTO `db_school`.`AllocateSubject` (`SubjectId`, `TeacherId`) VALUES ('7', '2');
+
+
+
