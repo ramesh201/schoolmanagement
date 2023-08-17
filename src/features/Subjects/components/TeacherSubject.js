@@ -108,7 +108,7 @@ export class TeacherSubject extends Component {
       validatedTeacher: true,
     });
 
-    var teacherIdParam = form[0].value == "" ? 0 : parseInt(form[0].value);
+    var teacherIdParam = form[0].value === "" ? 0 : parseInt(form[0].value);
     this.setState({ selectedTeacherId: teacherIdParam });
     this.getTeacherSubject(teacherIdParam);
   };
@@ -121,9 +121,9 @@ export class TeacherSubject extends Component {
       validatedSubject: true,
     });
 
-    var subjectIdParam = form[0].value == "" ? 0 : parseInt(form[0].value);
+    var subjectIdParam = form[0].value === "" ? 0 : parseInt(form[0].value);
 
-    if (subjectIdParam != 0 && this.state.selectedTeacherId != 0) {
+    if (subjectIdParam !== 0 && this.state.selectedTeacherId !== 0) {
       var formBody = {
         allocateSubjectId: -1,
         ClassroomId: -1,
@@ -173,10 +173,6 @@ export class TeacherSubject extends Component {
   }
 
   handleInactive = async () => {
-    var formBody = {
-      allocateSubjectId: this.state.selectedTeacherSubject.allocateSubjectId,
-    };
-
     this.setState({ deleteModelShow: false });
 
     try {

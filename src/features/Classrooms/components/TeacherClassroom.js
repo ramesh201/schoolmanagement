@@ -104,7 +104,7 @@ export class TeacherClassroom extends Component {
       validatedTeacher: true,
     });
 
-    var teacherIdParam = form[0].value == "" ? 0 : parseInt(form[0].value);
+    var teacherIdParam = form[0].value === "" ? 0 : parseInt(form[0].value);
     this.setState({ selectedTeacherId: teacherIdParam });
     this.getTeacherClassrooms(teacherIdParam);
   };
@@ -117,9 +117,9 @@ export class TeacherClassroom extends Component {
       validatedSubject: true,
     });
 
-    var classroomIdParam = form[0].value == "" ? 0 : parseInt(form[0].value);
+    var classroomIdParam = form[0].value === "" ? 0 : parseInt(form[0].value);
 
-    if (classroomIdParam != 0 && this.state.selectedTeacherId != 0) {
+    if (classroomIdParam !== 0 && this.state.selectedTeacherId !== 0) {
       var formBody = {
         allocateCLassroomId: -1,
         ClassroomId: classroomIdParam,
@@ -168,11 +168,6 @@ export class TeacherClassroom extends Component {
   }
 
   handleInactive = async () => {
-    var formBody = {
-      allocateSubjectId:
-        this.state.selectedTeacherClassroom.allocateClassroomId,
-    };
-
     this.setState({ deleteModelShow: false });
 
     try {

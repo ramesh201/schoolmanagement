@@ -81,10 +81,6 @@ export class Classrooms extends Component {
     else this.setState({ deleteModelShow: false });
   }
   handleInactive = async () => {
-    var formBody = {
-      classroomId: this.state.selectedClassroom.classroomId,
-    };
-
     try {
       this.setState({ loading: true });
 

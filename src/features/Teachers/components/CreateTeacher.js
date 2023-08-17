@@ -87,10 +87,11 @@ export class CreateTeacher extends Component {
     });
   }
   setFieldValue(fieldName, fieldValue) {
-    if (fieldName == "firstName") this.setState({ firstName: fieldValue });
-    if (fieldName == "lastName") this.setState({ lastName: fieldValue });
-    if (fieldName == "mobileNo") this.setState({ mobileNo: fieldValue });
-    if (fieldName == "emailAddress") this.setState({ emailAddres: fieldValue });
+    if (fieldName === "firstName") this.setState({ firstName: fieldValue });
+    if (fieldName === "lastName") this.setState({ lastName: fieldValue });
+    if (fieldName === "mobileNo") this.setState({ mobileNo: fieldValue });
+    if (fieldName === "emailAddress")
+      this.setState({ emailAddres: fieldValue });
   }
   render() {
     return (

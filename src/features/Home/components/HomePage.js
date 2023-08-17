@@ -48,7 +48,7 @@ export class HomePage extends Component {
               <Col key={idx}>
                 <Card
                   bg={val.bgClr}
-                  text={val.bgClr == "light" ? "black" : "white"}
+                  text={val.bgClr === "light" ? "black" : "white"}
                   key={val.key}
                   onClick={() => this.goToPage(val)}
                 >

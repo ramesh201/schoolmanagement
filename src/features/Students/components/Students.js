@@ -96,17 +96,6 @@ export class Students extends Component {
     else this.setState({ deleteModelShow: false });
   }
   handleInactive = async () => {
-    var formBody = {
-      studentId: this.state.selectedStudent.studentId,
-      studentFirstName: "",
-      studentLastName: "",
-      contactPersonName: "",
-      contactPersonContactNo: "",
-      contactPersonEmail: "",
-      classroomId: -1,
-      dateOfBirth: "",
-    };
-
     try {
       this.setState({ loading: true });
 

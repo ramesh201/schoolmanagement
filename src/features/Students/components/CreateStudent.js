@@ -37,16 +37,16 @@ export class CreateStudent extends Component {
     };
   }
   setFieldValue(fieldName, fieldValue) {
-    if (fieldName == "firstName") this.setState({ firstName: fieldValue });
-    if (fieldName == "lastName") this.setState({ lastName: fieldValue });
-    if (fieldName == "contactPerson")
+    if (fieldName === "firstName") this.setState({ firstName: fieldValue });
+    if (fieldName === "lastName") this.setState({ lastName: fieldValue });
+    if (fieldName === "contactPerson")
       this.setState({ contactPerson: fieldValue });
-    if (fieldName == "contactMobile")
+    if (fieldName === "contactMobile")
       this.setState({ contactMobile: fieldValue });
-    if (fieldName == "contactEmail")
+    if (fieldName === "contactEmail")
       this.setState({ contactEmail: fieldValue });
-    if (fieldName == "dob") this.setDate(fieldValue);
-    if (fieldName == "classroomId") {
+    if (fieldName === "dob") this.setDate(fieldValue);
+    if (fieldName === "classroomId") {
       this.setSelectedStudentClassroom();
     }
   }

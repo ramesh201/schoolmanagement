@@ -82,10 +82,6 @@ export class Subjects extends Component {
     else this.setState({ deleteModelShow: false });
   }
   handleInactive = async () => {
-    var formBody = {
-      subjectId: this.state.selectedSubject.subjectId,
-    };
-
     try {
       this.setState({ loading: true });
 
